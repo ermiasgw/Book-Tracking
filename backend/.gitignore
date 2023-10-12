@@ -1,0 +1,14 @@
+# Exclude Python bytecode files
+__pycache__
+
+# Exclude development and testing related files
+tests
+*.pyc
+*.pyo
+*.pytest_cache
+
+
+# Exclude virtual environment (if you use one)
+venv
+.venv
+env
