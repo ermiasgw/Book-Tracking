@@ -42,7 +42,7 @@ export default function Book({book, setBooks, setSync, setError}: Bookprops) {
         }
         
       } catch (error) {
-       setError("server error updatong data")
+       setError("server error retrieving file")
       } 
     }
 
@@ -59,7 +59,7 @@ export default function Book({book, setBooks, setSync, setError}: Bookprops) {
         const response = await fetch(`http://localhost:8000/api/v1/books/${id}`, {
           method: 'DELETE',
         })
-        if (response.status != 200) {
+        if (response.status !== 200) {
           const error = await response.json()
           setError(error.detail)
         }
@@ -73,9 +73,9 @@ export default function Book({book, setBooks, setSync, setError}: Bookprops) {
     }
 
   return (
-    <div ref={drag} className="flex items-center mt-0 m-2 p-3 text-base font-medium text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow cursor-move">
-      <button onClick={showBook} className="flex-1 ml-3 mr-12 whitespace-nowrap">{book.title}</button>
-      <button onClick={handleClick} className="inline-flex items-center justify-center px-2 py-0.5 ml-3 text-xs font-medium text-gray-500 bg-red-300 rounded">delete </button>
+    <div ref={drag} className=" mt-0 m-3 p-3 text-base font-medium text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 hover:shadow cursor-move flex flex-nowrap place-content-between ">
+      <button onClick={showBook} className="text-sm text-ellipsis overflow-x-hidden whitespace-nowrap ">{book.title}</button>
+      <button onClick={handleClick} className="justify-center px-2 py-0.5 text-xs font-medium text-gray-500 bg-red-300 rounded">delete </button>
     </div>
   );
 }

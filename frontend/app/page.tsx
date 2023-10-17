@@ -54,7 +54,7 @@ export default function Home() {
   
   return (
     <main className='h-full flex flex-col'>
-      <div className="shadow-sm shadow- p-5 py-3 text-center">
+      <div className="shadow-sm p-5 py-3 text-center">
           <h1 className='text-2xl inline-block text-gray-900 font-semibold'>Book Tracking</h1> 
           {(sync) ? (syncing): ''}
       </div>

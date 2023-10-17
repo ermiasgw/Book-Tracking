@@ -8,6 +8,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - '8000:8000'
+    volumes:
+      - uploaded-files:/backend/books
 
   db:
     image: postgres:alpine3.18
@@ -34,3 +36,4 @@ services:
      
 volumes:
   app-db-data:
+  uploaded-files:

@@ -43,12 +43,11 @@ export default function AddBook({setBooks, error, setError}: props) {
   const errorJsx = <div className="text-sm font-normal text-center text-red-500">* {error}</div>
 
     return (
-        <div className='mx-auto w-3/5 p-5'>
-          
+        <div className='mx-auto p-5'>
           <form method='POST' onSubmit={onSubmit} className=' flex flex-row items-center justify-center space-x-2'>
             <input name='title' className=' text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:outline-none placeholder-gray-400 focus:shadow focus:shadow-slate-700' type="text" placeholder='Book Title' />
-            <input name='file' className="inline w-50  text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none dark:bg-gray-700 dark:border-gray-600 " id="file_input" type="file" accept="application/pdf" required />
-            <button type='submit' className='text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center'  disabled={isLoading}>{isLoading ? 'Loading...' : 'Add Book'}</button>
+            <input name='file' className="inline  text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none " id="file_input" type="file" accept="application/pdf" required />
+            <button type='submit' className='text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center whitespace-nowrap'  disabled={isLoading}>{isLoading ? 'Loading...' : 'Add Book'}</button>
           </form>
           {(error) ? (errorJsx): ''}
           {(success) ? (successJsx): ''}

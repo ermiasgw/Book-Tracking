@@ -29,7 +29,7 @@ export default function Column({status, books, setBooks, setSync, setError}: col
         const response = await fetch(`http://localhost:8000/api/v1/books/${id}/?status=${status}`, {
           method: 'PUT',
         })
-        if (response.status != 202) {
+        if (response.status !== 202) {
           const error = await response.json()
           setError(error.detail)
         }
@@ -74,8 +74,8 @@ export default function Column({status, books, setBooks, setSync, setError}: col
     }
 
   return (
-    <div ref={drop} className={`w-1/3 flex flex-col p-4 pt-2 ${isOver ? "bg-slate-100": "bg-white border" }  border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 h-full`}>
-          <span className={`bg-blue-100 mb-5 ${bg} text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300`}>{text}</span>
+    <div ref={drop} className={`w-1/3 flex flex-col p-4 pt-2 ${isOver ? "bg-slate-100": "bg-white border" }  border-gray-200 rounded-lg shadow h-full `}>
+          <span className={`bg-blue-100 mb-5 ${bg} text-sm font-medium mr-2 px-2.5 py-0.5 rounded `}>{text}</span>
           {comp}
     </div>
   );

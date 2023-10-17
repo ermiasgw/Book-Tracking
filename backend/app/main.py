@@ -2,7 +2,7 @@ import uuid
 
 from fastapi import FastAPI, Form, HTTPException, UploadFile, status as s
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, Response
 
 from . import database
 

@@ -30,17 +30,6 @@ class Database:
         )
 
     def __enter__(self):
-        timeout_seconds = 30
-        start_time = time.time()
-        while True:
-            self.check_for_database()
-            current_time = time.time()
-            elapsed_time = current_time - start_time
-
-            if elapsed_time >= timeout_seconds:
-                break
-            time.sleep(3)
-
         self.connection = self.connect_to_database()
         self.cursor = self.connection.cursor()
         return self

@@ -7,6 +7,7 @@
     html {
       font-family: "Proxima Nova", system-ui, sans-serif;
       height: 100%;
+      min-width: fit-content;
     }
     body {
         height: 100%;
